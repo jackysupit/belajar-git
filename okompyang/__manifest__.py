@@ -12,6 +12,7 @@
         'security/ir.model.access.csv',
         'views/produk.xml',
     ],
+    'application': True,
     'depends': [
         'sale'
     ]
