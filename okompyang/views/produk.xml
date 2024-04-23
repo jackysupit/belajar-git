@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="okompyang_produk_form" model="ir.ui.view">
+            <field name="name">okompyang.produk.form.view</field>
+            <field name="model">okompyang.produk</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="name"/>                        
+                        <field name="harga"/>                        
+                    </sheet>
+                    <!-- <div  class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"></field>
+                        <field name="message_ids" widget="mail_thread"></field>
+                    </div> -->
+                </form>
+            </field>
+        </record>
+        
+        <record id="okompyang_produk_action" model="ir.actions.act_window">
+            <field name="name">Produk</field>
+            <field name="res_model">okompyang.produk</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">model.sale.view.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="priority">16</field>
+            <!-- ini kalau inherit ke sale -->
+            <field name="inherit_id" ref="sale.view_order_form"/>
+
+            <!-- ini kalau inherit ke balimoon -->
+            <!-- <field name="inherit_id" ref="obalimoon.view_order_form_inherit"/> -->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                <!-- <xpath expr="//field[@name='user_id']" position="after"> -->
+                    <field name="team_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        
+
+
+        <menuitem name="Kompyang" id="okompyang.menu_utama"/>
+
+        <menuitem
+            id="okompyang.menu_produk"
+            name="Produk"
+            action="okompyang_produk_action"
+            parent="okompyang.menu_utama"/>
+    </data>
+</odoo>

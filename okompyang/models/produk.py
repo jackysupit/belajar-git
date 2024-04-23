@@ -1,0 +1,10 @@
+from odoo import api, fields, models, _, tools
+
+
+class Produk(models.Model):
+    _name = "okompyang.produk"
+    _description = "Ini adalah model produk kompyang"
+
+
+    name = fields.Char()
+    harga = fields.Integer(string='')
