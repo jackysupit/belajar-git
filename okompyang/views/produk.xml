@@ -7,8 +7,31 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <field name="name"/>                        
-                        <field name="harga"/>                        
+                        <group col="3">
+                            <!-- kiri -->
+                            <group string="Group 1" class="bg-success">
+                                <field name="name"/>                        
+                                <field name="harga"/>      
+                            </group>
+
+                            <!-- kanan -->
+                            <group string="Group 2" class="bg-warning">
+                                <field name="state"/>                                          
+                            </group>
+
+                            <!-- kiri -->
+                            <group string="Group 3" class="bg-danger">
+                                <field name="name"/>                        
+                                <field name="harga"/>      
+                            </group>
+
+                            <!-- kanan -->
+                            <group string="Group 4" class="bg-info">
+                                <field name="state"/>                                          
+                            </group>
+
+                            
+                        </group>
                     </sheet>
                     <!-- <div  class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"></field>
@@ -18,10 +41,58 @@
             </field>
         </record>
         
+        <record id="okompyang_produk_tree" model="ir.ui.view">
+            <field name="name">okompyang.produk.tree.view</field>
+            <field name="model">okompyang.produk</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>                        
+                    <field name="harga"/>                        
+                       
+                    <field name="state" 
+                        decoration-success="state == 'hijau'" 
+                        decoration-warning="state == 'kuning'" 
+                        decoration-danger="state == 'merah'" 
+                        widget="badge" 
+                        optional="show" 
+                        />
+                                    
+                </tree>
+            </field>
+        </record>
+        
+
+
+ <record id="view_produk_filter" model="ir.ui.view">
+        <field name="name">okompyang.produk.list.select</field>
+        <field name="model">okompyang.produk</field>
+        <!-- <field name="priority" eval="15"/> -->
+        <field name="arch" type="xml">
+            <search string="Produk">
+                <field name="name" string="Nama"/>
+                <field name="harga"/>
+                <field name="state" />
+
+                <filter string="Merah" name="filter_merah" domain="[('state', '=', 'merah')]"/>
+                <filter string="kuning" name="filter_kuning" domain="[('state', '=', 'kuning')]"/>
+                <filter string="hijau" name="filter_hijau" domain="[('state', '=', 'hijau')]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Harga" name="group_by_harga" domain="[]" context="{'group_by': 'harga'}"/>
+                    <filter string="State" name="group_by_state" domain="[]" context="{'group_by': 'state'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+
+
         <record id="okompyang_produk_action" model="ir.actions.act_window">
             <field name="name">Produk</field>
             <field name="res_model">okompyang.produk</field>
             <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_produk_filter"/>
         </record>
 
 
@@ -46,9 +117,10 @@
 
         
 
-
+<!-- Menu Parent tanpa action -->
         <menuitem name="Kompyang" id="okompyang.menu_utama"/>
 
+        <!-- Sub Menu, dengan Action -->
         <menuitem
             id="okompyang.menu_produk"
             name="Produk"

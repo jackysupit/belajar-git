@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_model_okompyang_siswa,access_model_okompyang_siswa,model_okompyang_siswa,base.group_user,1,1,1,1
+access_model_okompyang_kategori_produk_user,access_model_okompyang_kategori_produk_user,model_okompyang_kategori,base.group_user,1,1,1,1
 access_model_okompyang_produk_user,access_model_okompyang_produk_user,model_okompyang_produk,base.group_user,1,1,1,0
 access_model_okompyang_produk_admin,access_model_okompyang_produk_admin,model_okompyang_produk,base.group_system,1,1,1,1
