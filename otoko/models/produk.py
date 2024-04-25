@@ -1,19 +1,34 @@
 from odoo import fields, models, api
 from odoo.exceptions import ValidationError
 
-class Product(models.Model):
-    _name = 'otoko.product'
-    _description = 'This is Product model of otoko module'
+class Produk(models.Model):
+    _inherit = 'okompyang.produk'
 
     code = fields.Char(required=True)
     name = fields.Char(required=True)
-    price = fields.Integer()
+    qty = fields.Integer()
+
+    @api.depends('qty', 'harga')
+    def compute_subtotal(self):
+        for rec in self:
+            rec.subtotal = rec.qty * rec.harga
+
+    subtotal = fields.Integer(compute="compute_subtotal")
+
+
     state = fields.Selection(string='Status', 
                              selection=[
                                  ('A', 'Active'),
                                  ('I', 'Inactive'),
                              ],
                              default='A')
+    color = fields.Selection(string='Warna', 
+                             selection=[
+                                 ('red', 'Merah'),
+                                 ('yellow', 'Kuning'),
+                                 ('green', 'Hijau'),
+                             ],
+                             default='green')
     
     @api.constrains('code')
     def _check_your_field(self):

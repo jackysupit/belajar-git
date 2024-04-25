@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <record id="inherit_produk_form" model="ir.ui.view">
+            <field name="name">okompyang.produk.view.form.inherit</field>
+            <field name="model">okompyang.produk</field>
+            <field name="inherit_id" ref="okompyang.okompyang_produk_form" />
+            <field name="arch" type="xml">
+                <!-- <xpath expr="(//field[@name = 'name'])[2]" position="after">
+                    <field name="code"></field>
+                </xpath> -->
+                <xpath expr="(//field[@name = 'state'])[2]" position="after">
+                    <field name="color"></field>
+                    <field name="subtotal"></field>
+                    <field name="qty"></field>
+                    <field name="name" readonly="1" string="Nama ini readonly"></field>
+                    <field name="name" attrs="{'readonly': [('color', '=', 'yellow')]}" string="Nama ini readonly jika kuning"></field>
+                </xpath>
+                <xpath expr="(//group)[1]/group[3]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('color', '!=', 'red')]}</attribute>
+                </xpath>
+                <xpath expr="(//group)[1]/group[2]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('color', '!=', 'yellow')]}</attribute>
+                </xpath>
+                <xpath expr="(//group)[1]/group[1]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('color', '!=', 'green')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name = 'qty']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('color', '=', 'red')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_okompyang_produk_tree" model="ir.ui.view">
+            <field name="name">okompyang.produk.view.tree.inherit</field>
+            <field name="model">okompyang.produk</field>
+            <field name="inherit_id" ref="okompyang.okompyang_produk_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name = 'state']" position="after">
+                    <field name="color"></field>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+
+</odoo>
