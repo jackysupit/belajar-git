@@ -6,7 +6,7 @@ class Produk(models.Model):
     _description = "Ini adalah model produk kompyang"
 
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     harga = fields.Integer(string='')
 
     state = fields.Selection(string='Status', selection=[
