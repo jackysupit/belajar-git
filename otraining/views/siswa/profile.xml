@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_satu">
+        <t t-call="website.layout">
+            <!-- Add your custom content inside the main section -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Partner Name -->
+                        <h1 t-if="partner" t-esc="partner.name"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="page_dua">
+        <t t-call="website.layout">
+            <!-- Add your custom content inside the main section -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Partner Name -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="partners" t-as="partner">
+                                   <tr>
+                                        <td><t t-esc="partner.name"/></td>
+                                        <td><t t-esc="partner.email"/></td>
+                                   </tr> 
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
