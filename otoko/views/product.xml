@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ini untuk tampilan form (editor) -->
+        <record id="otoko_product_form" model="ir.ui.view">
+            <field name="name">otoko.product.form.view</field>
+            <field name="model">otoko.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h3>Product</h3>
+                        <hr style="border: 1px dashed #999999;"/>
+                        <group>
+                            <!-- kiri -->
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                            </group>
+
+                            <!-- kanan -->
+                            <group>
+                                <field name="price" />
+                                <field name="state" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- ini untuk tampilan tree(list/inquiry) -->
+        <record id="otoko_product_tree" model="ir.ui.view">
+            <field name="name">otoko.product.tree.view</field>
+            <field name="model">otoko.product</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="price" />
+                    <field name="state"
+                        decoration-success="state == 'A'"
+                        decoration-warning="state == 'I'"
+                        widget="badge"
+                        optional="show" />
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_product_filter" model="ir.ui.view">
+            <field name="name">otoko.product.list.select</field>
+            <field name="model">otoko.product</field>
+            <!-- <field name="priority" eval="15"/> -->
+            <field name="arch" type="xml">
+                <search string="Product">
+                    <field name="code" string="Kode" />
+                    <field name="name" string="Nama" />
+                    <field name="price" />
+                    <field name="state" />
+
+                    <filter string="Active" name="filter_active" domain="[('state', '=', 'A')]" />
+                    <filter string="Inactive" name="filter_inactive" domain="[('state', '=', 'I')]" />
+
+                    <group expand="0" string="Group By">
+                        <filter string="price" name="group_by_price" domain="[]" context="{'group_by': 'price'}" />
+                        <filter string="State" name="group_by_state" domain="[]" context="{'group_by': 'state'}" />
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+
+        <record id="otoko_product_action" model="ir.actions.act_window">
+            <field name="name">Product</field>
+            <field name="res_model">otoko.product</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_product_filter" />
+        </record>
+
+        <!-- Menu Parent tanpa action -->
+        <menuitem name="Toko" id="otoko.menu_utama" />
+
+        <!-- Sub Menu, dengan Action -->
+        <menuitem id="otoko.menu_product"
+            name="Product"
+            action="otoko_product_action"
+            parent="otoko.menu_utama" />
+    </data>
+</odoo>
