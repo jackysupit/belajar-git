@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_model_otoko_product,access_model_otoko_product,model_otoko_product,base.group_user,1,1,1,1
 access_model_otoko_sale,access_model_otoko_sale,model_otoko_sale,base.group_user,1,1,1,1
+access_model_otoko_sale_detail,access_model_otoko_sale_detail,model_otoko_sale_detail,base.group_user,1,1,1,1
