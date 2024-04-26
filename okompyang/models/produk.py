@@ -15,3 +15,27 @@ class Produk(models.Model):
         ('kuning', 'Kuning'),
         ('hijau', 'Hijau'),
         ], default='hijau')
+
+    def do_tambah(self):
+        kategori = self.env['okompyang.kategori'].create({
+            'name': 'INI-KODE-BARU',
+            'keterangan': 'ini adalah isi field keterangan'
+        })
+
+        # jika sudah selesai, munculkan popup 
+
+        pesan = 'Kategori berhasil dibuat, id: {}'.format(kategori.id)
+        return self.env['okompyang.pesan'].popup(pesan)
+
+        # ctx = {
+        #     'default_name': pesan
+        # }
+
+        # return {
+        #     'name': 'Pesan',
+        #     'type': 'ir.actions.act_window',
+        #     'res_model': 'okompyang.pesan',  # Ganti dengan nama model yang Anda inginkan
+        #     'view_mode': 'form',  # Mode tampilan untuk window baru
+        #     'target': 'new',  # Buka window baru di tab baru
+        #     'context': ctx,
+        # }
