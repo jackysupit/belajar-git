@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_training_daftar_personal" name="Daftar Training">
+        <t t-call="website.layout">
+            <style>
+                .wrapper-detail img {
+                    max-width: 300px;
+                    display: inline-block;                    
+                }
+                .profile-label {
+                    min-width: 150px;
+                    display: inline-block;
+                }
+
+                .foto-profile {
+                    max-width: 100%;
+                }
+
+            </style>
+            <div class="">
+                <div class="oe_structure">
+                    <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24 o_colored_level" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1" data-name="Title" style="background-image: none;">
+                        <span class="s_parallax_bg oe_img_bg" style="background-image: url('/web/image/website.s_banner_default_image'); background-position: 50% 0;"></span>
+                        <div class="o_we_bg_filter bg-black-50"></div>
+                        <div class="container">
+                            <h1>Daftar Training</h1>
+                        </div>
+                    </section>
+                    <section class="s_media_list pt32 pb32 o_cc o_cc2 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List" style="background-image: none;">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed s_col_no_bgcolor">
+                                <!-- item 1 -->
+                    <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                        <div class="row s_col_no_resize s_col_no_bgcolor g-0 align-items-center o_cc o_cc1 o_colored_level p-5">
+                            <div class="col-lg12">
+                                <div class="row">
+                                    <div class="col-lg-4 align-self-stretch s_media_list_img_wrapper ">
+                                                    <img src="/web/image/website.s_media_list_default_image_1" class="s_media_list_img h-100 w-100" alt="" loading="lazy" data-original-id="1596" data-original-src="/web/image/1596-15e4499d/website.s_media_list_default_image_1" data-mimetype="image/jpeg" style=""/>
+                                    </div>
+                                    <div class="col-lg-8 s_media_list_body pt-0">
+                                        <div>
+                                            <h3>Training Sertifikasi Akuatika Tk. 1</h3>
+                                            <p>
+                                                Pertemuan ke: 3<br/>
+                                                Hari / Tgl: Kamis, 4 Mei 2024<br/>
+                                                Penerimaan Murid<br/>
+                                                Individu<b/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-lg-12 wrapper-detail">
+                                        <div class="mb-3 me-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="profile-label">Tipe</div>
+                                                <div class="profile-info flex-grow-1">
+                                                    <div class="row">
+                                                        <div class="">
+                                                            <label>
+                                                                <input type="radio" name="tipe_pendaftaran" value="1" checked="1" />
+                                                                Pribadi
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="tipe_pendaftaran" value="2"/>
+                                                                Perusahaan
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 me-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="profile-label">Catatan</div>
+                                                <div class="profile-info flex-grow-1">
+                                                    <textarea class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 me-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="profile-label"></div>
+                                                <div class="profile-info flex-grow-1">
+                                                    <div class="">
+                                                        <a href="#" class="btn  btn-primary">Daftar</a>
+                                                        <a href="#" class="btn  btn-secondary">Batal</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>                                        
+                                </div>                                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</t>
+</template>
+</odoo>

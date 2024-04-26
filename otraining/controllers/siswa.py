@@ -72,6 +72,16 @@ class SiswaController(Controller):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_corporat_member_add', {'partner': partner})
 
+    @route(['/siswa/training/daftar/personal'], type='http', auth="user", website=True)
+    def do_training_data_personal(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_training_daftar_personal', {'partner': partner})
+
+    @route(['/siswa/training/daftar/corporat'], type='http', auth="user", website=True)
+    def do_training_data_corporat(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_training_daftar_corporat', {'partner': partner})
+
     @route(['/siswa/corporat/pic'], type='http', auth="user", website=True)
     def do_corporat_pic(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user

@@ -26,6 +26,8 @@
         'views/siswa/corporat_member_add.xml',
         'views/siswa/corporat_pic.xml',
         'views/siswa/kelas.xml',
+        'views/siswa/training_daftar_corporat.xml',
+        'views/siswa/training_daftar_personal.xml',
     ],
     'application': True,
     'depends': [

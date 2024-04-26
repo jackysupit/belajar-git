@@ -12,6 +12,7 @@
         'data/kategori.xml',
         'security/ir.model.access.csv',
         'views/produk.xml',
+        'views/pesan.xml',
     ],
     'application': True,
     'depends': [
