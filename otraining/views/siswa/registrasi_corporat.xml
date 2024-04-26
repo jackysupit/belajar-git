@@ -62,39 +62,41 @@
                             </div>
 
                             <!-- Profile Information -->
-                            <div class="mb-3 me-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="profile-label">Nama</div>
-                                    <div class="profile-info flex-grow-1">
-                                        <input type="text" class="form-control" name="name" value="Luna Maya"/>
+                            <div>
+                                <div class="mb-3 me-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="profile-label">Nama</div>
+                                        <div class="profile-info flex-grow-1">
+                                            <input type="text" class="form-control" name="name" value="Luna Maya"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 me-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="profile-label">Email</div>
+                                        <div class="profile-info flex-grow-1">
+                                            <input type="text" class="form-control" name="name" value="lunamaya@gmail.com"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 me-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="profile-label">Phone</div>
+                                        <div class="profile-info flex-grow-1">
+                                            <input type="text" class="form-control" name="name" value="0812.5000.1234"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 me-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="profile-label">Alamat</div>
+                                        <div class="profile-info flex-grow-1">
+                                            <textarea class="form-control" name="name">Jalan Denpasar Selatan No. 55, Kuta, Bali</textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-3 me-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="profile-label">Email</div>
-                                    <div class="profile-info flex-grow-1">
-                                        <input type="text" class="form-control" name="name" value="lunamaya@gmail.com"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3 me-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="profile-label">Phone</div>
-                                    <div class="profile-info flex-grow-1">
-                                        <input type="text" class="form-control" name="name" value="0812.5000.1234"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3 me-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="profile-label">Alamat</div>
-                                    <div class="profile-info flex-grow-1">
-                                        <textarea class="form-control" name="name">Jalan Denpasar Selatan No. 55, Kuta, Bali</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            
+
                             <!-- CORPORAT start -->
                             <div class="mb-3 me-3">
                                 <div class="d-flex align-items-center">

@@ -33,6 +33,16 @@
                             </group>
 
                             
+
+                        </group>
+
+                        <group>
+<!--                             
+                            name = nama_function yang akan dipanggil 
+                            type = object 
+                            string = Labelnya
+                            class = bootstrap.css  -->
+                            <button name="do_tambah" type="object" string="Buat Kategori Baru" class="btn btn-primary" />
                         </group>
                     </sheet>
                 </form>
