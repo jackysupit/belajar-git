@@ -28,6 +28,9 @@
         'views/siswa/kelas.xml',
         'views/siswa/training_daftar_corporat.xml',
         'views/siswa/training_daftar_personal.xml',
+        'views/siswa/dashboard.xml',
+        'views/siswa/pembayaran_konfirmasi.xml',
+        'views/siswa/pembayaran_done.xml',
     ],
     'application': True,
     'depends': [

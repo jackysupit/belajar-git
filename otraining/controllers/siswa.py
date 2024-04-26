@@ -91,3 +91,18 @@ class SiswaController(Controller):
     def do_siswa_kelas(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_siswa_kelas', {'partner': partner})
+
+    @route(['/siswa/dashboard'], type='http', auth="user", website=True)
+    def do_siswa_dashboard(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_siswa_dashboard', {'partner': partner})
+
+    @route(['/siswa/pembayaran/konfirmasi'], type='http', auth="user", website=True)
+    def do_siswa_pembayaran_konfirmasi(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_pembayaran_konfirmasi', {'partner': partner})
+
+    @route(['/siswa/pembayaran/done'], type='http', auth="user", website=True)
+    def do_siswa_pembayaran_done(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_pembayaran_done', {'partner': partner})

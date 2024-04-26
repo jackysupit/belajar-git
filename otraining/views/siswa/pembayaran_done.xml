@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_pembayaran_done">
+        <t t-call="website.layout">
+            <style>
+                /* Optional custom styles */
+                .logout-container {
+                max-width: 600px;
+                margin: auto;
+                margin-top: 100px;
+                text-align: center;
+                }
+            </style>
+            <div class="container logout-container mb-5">
+                <h2>Konfirmasi Pembayaran Selesai</h2>
+                <div class="alert alert-succes">
+                    Terima kasih, kami akan segera memproses pembayaran Anda.
+                </div>                    
+                <p >
+                    <a href="3">Kembali Ke Dashboard</a>
+                </p>
+            </div>
+        </t>
+    </template>
+</odoo>

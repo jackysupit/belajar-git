@@ -9,6 +9,9 @@ class Produk(models.Model):
     name = fields.Char(required=True)
     harga = fields.Integer(string='')
     
+    #one2many 
+    siswa_ids = fields.One2many('okompyang.siswa', 'produk_id')
+
 
     state = fields.Selection(string='Status', selection=[
         ('merah', 'Merah'),

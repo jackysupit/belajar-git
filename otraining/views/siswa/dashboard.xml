@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_siswa_dashboard" name="Dashboard">
+        <t t-call="website.layout">
+            <style>
+                .wrapper-detail img {
+                    max-width: 300px;
+                    display: inline-block;                    
+                }
+                .section-kelas .img-thumb {
+                    height: 316px;
+                    width: 316px;
+                    overflow: hidden
+                }
+                .section-kelas .img-thumb img {
+                    height: 316px;
+                    width: auto;
+                    <!-- max-height: 316px; -->
+                    <!-- max-width: 316px; -->
+                }
+                
+            </style>
+            <div class="">
+                <div class="oe_structure">
+                    <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24 o_colored_level" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1" data-name="Title" style="background-image: none;">
+                        <span class="s_parallax_bg oe_img_bg" style="background-image: url('/web/image/website.s_banner_default_image'); background-position: 50% 0;"></span>
+                        <div class="o_we_bg_filter bg-black-50"></div>
+                        <div class="container">
+                            <h1>Dashboard</h1>
+                        </div>
+                    </section>
+                    <section class="s_media_list pb32 o_cc o_cc2 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List" style="background-image: none;">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed s_col_no_bgcolor">
+                                <!-- item 1 -->
+                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor g-0 align-items-center o_cc o_cc1 o_colored_level p-5">
+                                        <div class="dashboard-detail oe_structure oe_empty" data-oe-model="ir.ui.view" data-oe-id="3906" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/div[1]">
+
+                                            <section class="section-kelas s_three_columns o_cc o_cc2 p-3 pb-0 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="background-image: none;">
+                                                <div class="container">
+                                                    <div class="row d-flex align-items-stretch">
+                                                        <div class="col-lg-12 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100">
+                                                                <div class="card-body">
+                                                                    <div class="alert alert-warning alert-dismissible fade show p-2" role="alert">
+                                                                        Anda belum melakukan pembayaran Training Aquatika Tk.1, Segera <a href="#">lakukan pembayaran</a> sebelum kelas penuh. 
+                                                                        Jika Anda sudah melakukan pembayaran, Anda bisa melakukan <a href="#">konfirmasi pembayaran</a> disini.
+                                                                    </div>                                                                    
+                                                                </div>
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section class="section-kelas s_three_columns o_cc o_cc2 p-3 pb-0 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="background-image: none;">
+                                                <div class="container">
+                                                    <div class="row d-flex align-items-stretch">
+                                                        <div class="col-lg-4 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100">
+                                                                <div class="img-thumb">
+                                                                    <img class="card-img-top" src="/otraining/static/images/training/training-kelistrikan.jpg" alt="" loading="lazy" data-original-id="1616" 
+                                                                    data-mimetype="image/jpeg" style=""/>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h3 class="card-title o_default_snippet_text">Training Kelistrikan 1</h3>
+                                                                    <p class="card-text o_default_snippet_text">Pertemuan Selanjutnya:<br/> Jumat, 5 Mei 2024, 13:00 WIB</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100">
+                                                                <div class="img-thumb">
+                                                                    <img class="card-img-top" src="/otraining/static/images/training/training-renang.jpg" alt="" loading="lazy" 
+                                                                    data-mimetype="image/jpeg" style=""/>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h3 class="card-title o_default_snippet_text">Training Berenang 1</h3>
+                                                                    <p class="card-text o_default_snippet_text">Pertemuan Selanjutnya:<br/> Sabtu, 6 Mei 2024, 13:00 WIB</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100">
+                                                                <div class="img-thumb">
+                                                                    <img class="card-img-top" src="/otraining/static/images/training/training-pemadam-kebakaran.jpg" alt="" loading="lazy" 
+                                                                    data-mimetype="image/jpeg" style=""/>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h3 class="card-title o_default_snippet_text">Training Pemadam Kebakaran 1</h3>
+                                                                    <p class="card-text o_default_snippet_text">Pertemuan Selanjutnya:<br/> Minggu, 7 Mei 2024, 13:00 WIB</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="section-stat s_three_columns o_cc o_cc2 p-3 pb32 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="background-image: none;">
+                                                <div class="container">
+                                                    <div class="row d-flex align-items-stretch">
+                                                        <div class="col-lg-4 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100 text-center">
+                                                                <div class="card-body">
+                                                                    <span class="s_number display-4 o_default_snippet_text">3</span>
+                                                                    <h6 class="o_default_snippet_text">Training Berjalan</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100 text-center">
+                                                                <div class="card-body">
+                                                                    <span class="s_number display-4 o_default_snippet_text">2</span>
+                                                                    <h6 class="o_default_snippet_text">Training Belum Dibayar</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 s_col_no_bgcolor pt0 pb16">
+                                                            <div class="card text-bg-white h-100 text-center">
+                                                                <div class="card-body">
+                                                                    <span class="s_number display-4 o_default_snippet_text">4</span>
+                                                                    <h6 class="o_default_snippet_text">Training Lulus</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

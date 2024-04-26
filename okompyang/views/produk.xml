@@ -44,6 +44,8 @@
                             class = bootstrap.css  -->
                             <button name="do_tambah" type="object" string="Buat Kategori Baru" class="btn btn-primary" />
                         </group>
+
+                        <field name="siswa_ids"/>
                     </sheet>
                 </form>
             </field>

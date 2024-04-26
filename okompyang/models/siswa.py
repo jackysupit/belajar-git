@@ -8,5 +8,7 @@ class Siswa(models.Model):
     name = fields.Char()
     jurusan = fields.Char()
     tanggal = fields.Date(string='')
+    
+    #many2one
     produk_id = fields.Many2one(string='Produk', comodel_name='okompyang.produk', ondelete='restrict')
     

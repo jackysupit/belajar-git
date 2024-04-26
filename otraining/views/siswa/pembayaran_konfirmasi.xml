@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_pembayaran_konfirmasi">
+        <t t-call="website.layout">
+            <style>
+                /* Optional custom styles */
+                .logout-container {
+                max-width: 600px;
+                margin: auto;
+                margin-top: 100px;
+                }
+            </style>
+            <div class="container logout-container mb-5">
+                <div class="row mb-4">
+                    <div class="col-lg-12 text-center">
+                        <h2>Konfirmasi Pembayaran</h2>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-4">
+                        Bukti Pembayaran
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="file" />
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-4">
+                        Nomor Tagihan
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" value="INV-04-001"/>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-4">
+                        
+                    </div>
+                    <div class="col-lg-8">
+                        <button class="btn btn-primary">Kirim</button>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
