@@ -10,9 +10,10 @@
     'license': 'AGPL-3',
     'data': [
         'security/ir.model.access.csv',
-        # 'views/product.xml',
-        'views/produk.xml',
-        'views/my_sale.xml',
+        'data/otoko_sequences.xml',
+        'views/product.xml',
+        'views/sale.xml',
+        # 'views/my_sale.xml',
     ],
     'application': True,
     'depends': [

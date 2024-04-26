@@ -48,11 +48,10 @@
             </field>
         </record>
 
-
+        <!-- Filters -->
         <record id="view_product_filter" model="ir.ui.view">
             <field name="name">otoko.product.list.select</field>
             <field name="model">otoko.product</field>
-            <!-- <field name="priority" eval="15"/> -->
             <field name="arch" type="xml">
                 <search string="Product">
                     <field name="code" string="Kode" />
@@ -72,7 +71,7 @@
             </field>
         </record>
 
-
+        <!-- Actions -->
         <record id="otoko_product_action" model="ir.actions.act_window">
             <field name="name">Product</field>
             <field name="res_model">otoko.product</field>
