@@ -7,14 +7,17 @@ from odoo.http import content_disposition, Controller, request, route
 
 class PartnerController(Controller):
 
-    @route(['/satu'], type='http', auth="user", website=True)
-    def do_satu(self):
-        # return "Halo Jek"
+    @route(['/siswa/profile'], type='http', auth="user", website=True)
+    def do_profile(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_satu', {'partner': partner})
-    
-    @route(['/dua'], type='http', auth="user", website=True)
-    def do_dua(self):
-        # return "Halo Jek"
-        partners = request.env['res.partner'].search([])
-        return http.request.render('otraining.page_dua', {'partners': partners})
+        return http.request.render('otraining.page_profile', {'partner': partner})
+
+    @route(['/siswa/profile/edit'], type='http', auth="user", website=True)
+    def do_profile_edit(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_profile_edit', {'partner': partner})
+
+    @route(['/siswa/profile/edit/corporat'], type='http', auth="user", website=True)
+    def do_profile_edit_corporat(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_profile_edit_corporat', {'partner': partner})

@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="page_satu">
+    <template id="page_profile">
         <t t-call="website.layout">
-            <!-- Add your custom content inside the main section -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Partner Name -->
-                        <h1 t-if="partner" t-esc="partner.name"/>
-                    </div>
-                </div>
-            </div>
-        </t>
-    </template>
 
-    <template id="page_dua">
-        <t t-call="website.layout">
-            <!-- Add your custom content inside the main section -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Partner Name -->
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-foreach="partners" t-as="partner">
-                                   <tr>
-                                        <td><t t-esc="partner.name"/></td>
-                                        <td><t t-esc="partner.email"/></td>
-                                   </tr> 
-                                </t>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <style>
+                .profile-label {
+                min-width: 150px;
+                display: inline-block;
+                }
+
+                .foto-profile {
+                    max-width: 100%;
+                }
+
+@media (max-width: 768px) {
+  .float-sm-start {
+    float: left !important;
+  }
+  
+  .float-sm-end {
+    float: right !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .float-md-start {
+    float: left !important;
+  }
+  
+  .float-md-end {
+    float: right !important;
+  }
+}
+
+            </style>            
+
+<div class="container py-4">
+  <div class="">
+    <!-- Photo -->
+    <!-- Profile Information -->
+    <div class="d-flex mb-3">
+        <div class="col-md-9 col-sm-12 float-md-start float-sm-end  ">
+        <!-- Profile Name -->
+        <h1 class="mb-5">Luna Maya</h1>
+
+        <!-- Profile Information -->
+        <div class="mb-3">
+            <div class="d-flex align-items-center">
+            <div class="profile-label">No Registrasi</div>
+            <div class="profile-info">: 240100001</div>
             </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-center">
+            <div class="profile-label">Status</div>
+            <div class="profile-info">: <a href="#"> (3 Kelas Berjalan)</a></div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-center">
+            <div class="profile-label">Email</div>
+            <div class="profile-info">: lunamaya@gmail.com</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-center">
+            <div class="profile-label">Phone</div>
+            <div class="profile-info">: +12345</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-center">
+            <div class="profile-label">Alamat</div>
+            <div class="profile-info">: Jalan Denpasar Selatan No. 55, Kuta, Bali</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <a href="/siswa/profile/edit" class="btn btn-primary">Edit</a>
+        </div>
+        
+        </div>
+
+        <div class="col-md-3 col-sm-12 float-md-end float-sm-start  ">
+        <div class="text-center text-md-end mb-3 mb-md-0 float-md-start">
+            <img src="/otraining/static/images/profile/luna-maya.jpg" alt="Profile Photo" class="foto-profile img-thumbnail"/>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>            
+         
         </t>
     </template>
 </odoo>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_corporat_member_add">
+        <t t-call="website.layout">
+            <style>
+              .profile-label {
+                min-width: 150px;
+                display: inline-block;
+                }
+
+                .foto-profile {
+                    max-width: 100%;
+                }
+            </style>
+            <div class="container">
+                <div class="row g-0 s_col_no_resize s_col_no_bgcolor s_nb_column_fixed">
+
+                    <div class="text-center">
+                        <h1 class="m-5 mx-auto">PT. Sinar Rahayu Abadi</h1>
+                        <h5 class="m-5">Anggota Kelas Training: Sertifikasi Aquatika Tk 1 | 02 - 10 Juni 2024</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <!-- Profile Information start -->
+                            <div class="mb-3 me-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-label">Nama</div>
+                                    <div class="profile-info flex-grow-1">
+                                        <input type="text" class="form-control" name="name" value="Luna Maya"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 me-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-label">Email</div>
+                                    <div class="profile-info flex-grow-1">
+                                        <input type="text" class="form-control" name="name" value="lunamaya@gmail.com"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 me-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-label">Phone</div>
+                                    <div class="profile-info flex-grow-1">
+                                        <input type="text" class="form-control" name="name" value="0812.5000.1234"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 me-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-label">Alamat</div>
+                                    <div class="profile-info flex-grow-1">
+                                        <textarea class="form-control" name="name">Jalan Denpasar Selatan No. 55, Kuta, Bali</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 me-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-label"></div>
+                                    <div class="profile-info flex-grow-1">
+                                        <a href="/siswa/profile/edit" class="btn btn-primary">Tambah</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Profile Information end -->
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Telpon</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="range(4)" />
+                                <t t-foreach="counter" t-as="index">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="index + 1"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="['Andi Suryana', 'Budi Santoso', 'Citra Dewi', 'Dewi Lestari', 'Eka Putri'][index % 5]"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="['+621394923223', '+628123456789', '+627895432100', '+628987654321', '+621234567890'][index % 5]"/>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Hapus</button>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

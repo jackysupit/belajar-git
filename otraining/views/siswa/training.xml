@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_training">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row g-0 s_col_no_resize s_col_no_bgcolor s_nb_column_fixed">
+                    
+                    <div class="text-center">
+                        <h1 class="m-5 mx-auto">Training</h1>
+                    </div>
+
+                    <t t-set="counter" t-value="range(4)" />
+                    <t t-foreach="counter" t-as="index">
+                        <div class="row">
+                            <div class="col-lg text-lg-end">
+
+                                <div class="row">
+                                    <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                        <div class="s_showcase_title d-flex flex-lg-row-reverse mb-2">
+                                            <i class="fa fa-fire s_showcase_icon fa-2x text-secondary me-3 me-lg-0 ms-lg-3" data-bs-original-title="" title="" aria-describedby="tooltip863575"></i>
+                                            <h3>Advance Fire Fighting<br/>
+                                            </h3>
+                                        </div>
+                                        <p class="o_default_snippet_text">Sertifikat untuk keamanan saat terjadi darurat Api</p>
+                                        <a href="#" class="btn btn-sm btn-primary">daftar</a>
+                                    </div>
+                                    <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                        <div class="s_showcase_title d-flex flex-lg-row-reverse mb-2">
+                                            <i class="fa fa-volume-up s_showcase_icon fa-2x text-secondary me-3 me-lg-0 ms-lg-3" data-bs-original-title="" title="" aria-describedby="tooltip39845"></i>
+                                            <h3 class="o_default_snippet_text">Radar Simulator</h3>
+                                        </div>
+                                        <p>Sertifikasi untuk menjadi ahli dalam membaca radar</p>
+                                        <a href="#" class="btn btn-sm btn-primary">daftar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="w-50 h-100 border-end"></div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="row">
+                                    <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                        <div class="s_showcase_title d-flex mb-2">
+                                            <i class="fa fa-plus-circle s_showcase_icon fa-2x text-secondary me-3"></i>
+                                            <h3>Medical First Aid<br/>
+                                            </h3>
+                                        </div>
+                                        <p>Sertifikasi untuk keselamatan tingkat dasar</p>
+                                        <a href="#" class="btn btn-sm btn-primary">daftar</a>
+                                    </div>
+                                    <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                        <div class="s_showcase_title d-flex mb-2">
+                                            <i class="fa fa-anchor s_showcase_icon fa-2x text-secondary me-3"></i>
+                                            <h3>Ship Security Office</h3>
+                                        </div>
+                                        <p class="o_default_snippet_text">Untuk Anda yang ingin bekerja menjadi petugas kapal</p>
+                                        <a href="#" class="btn btn-sm btn-primary">daftar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

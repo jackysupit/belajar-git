@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_registrasi_done">
+        <t t-call="website.layout">
+            <style>
+                /* Optional custom styles */
+                .logout-container {
+                max-width: 400px;
+                margin: auto;
+                margin-top: 100px;
+                text-align: center;
+                }
+            </style>
+            <div class="container logout-container mb-5">
+                <h2>Berhasil</h2>
+                <p>Registrasi Anda sudah berhasil.<br/>
+                    Silahkan klik dibawah ini  untuk mendaftar training</p>
+                <a href="/siswa/login" class="btn btn-primary">Login</a>
+            </div>
+        </t>
+    </template>
+</odoo>

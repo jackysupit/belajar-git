@@ -8,6 +8,7 @@ class Produk(models.Model):
 
     name = fields.Char(required=True)
     harga = fields.Integer(string='')
+    
 
     state = fields.Selection(string='Status', selection=[
         ('merah', 'Merah'),

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_corporat_member_list">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row g-0 s_col_no_resize s_col_no_bgcolor s_nb_column_fixed">
+                    
+                    <div class="text-center">
+                        <h1 class="m-5 mx-auto">PT. Sinar Rahayu Abadi</h1>
+                        <h5 class="m-5">List Member</h5>
+                    </div>
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Telpon</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="range(10)" />
+                                <t t-foreach="counter" t-as="index">
+                                    <tr>
+                                        <td><t t-esc="index + 1"/></td>
+                                        <td><t t-esc="['Andi Suryana', 'Budi Santoso', 'Citra Dewi', 'Dewi Lestari', 'Eka Putri'][index % 5]"/></td>
+                                        <td><t t-esc="['+621394923223', '+628123456789', '+627895432100', '+628987654321', '+621234567890'][index % 5]"/></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Hapus</button>
+                                            <a href="/siswa/corporat/pic" class="btn btn-sm btn-warning">Jadikan PIC</a>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
