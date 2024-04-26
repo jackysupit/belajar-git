@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- ini untuk tampilan form (editor) -->
+        <record id="otoko_product_form" model="ir.ui.view">
+            <field name="name">otoko.product.form.view</field>
+            <field name="model">otoko.sale</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h3>Sale</h3>
+                        <hr style="border: 1px dashed #999999;"/>
+                        <group>
+                            <!-- kiri -->
+                            <group>
+                                <field name="name" />
+                                <field name="remark" />
+                            </group>
+
+                            <!-- kanan -->
+                            <!-- <group>
+                                <field name="price" />
+                                <field name="state" />
+                            </group> -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- ini untuk tampilan tree(list/inquiry) -->
+        <record id="otoko_product_tree" model="ir.ui.view">
+            <field name="name">otoko.sale.tree.view</field>
+            <field name="model">otoko.sale</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="remark" />
+                    <!-- <field name="price" />
+                    <field name="state"
+                        decoration-success="state == 'A'"
+                        decoration-warning="state == 'I'"
+                        widget="badge"
+                        optional="show" /> -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Actions -->
+        <record id="otoko_trx_sale_action" model="ir.actions.act_window">
+            <field name="name">Sale</field>
+            <field name="res_model">otoko.sale</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="search_view_id" ref="view_sale_filter" /> -->
+        </record>
+
+        <!-- Sub Menu, dengan Action -->
+        <menuitem id="otoko.menu_transaction" name="Transaction" parent="otoko.menu_utama"/>
+        <menuitem id="otoko.menu_transaction_sale" name="Sale" action="otoko_trx_sale_action" parent="otoko.menu_transaction"/>
+    </data>
+</odoo>
