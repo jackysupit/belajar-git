@@ -9,6 +9,7 @@
     'website':  'natha.com',
     'license': 'AGPL-3',
     'data': [
+        'data/kategori.xml',
         'security/ir.model.access.csv',
         'views/produk.xml',
     ],

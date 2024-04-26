@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sequence_kategori" model="ir.sequence">
+        <field name="name">Sequence Untuk Kategori</field>
+        <field name="code">okompyang.kategori.seq</field>
+        <field name="padding">4</field> <!-- Jumlah digit -->
+        <field name="prefix">ABC-</field> <!-- Awalan sequence -->
+        <field name="suffix">-XYZ</field> <!-- Awalan sequence -->
+    </record>
+</odoo>
