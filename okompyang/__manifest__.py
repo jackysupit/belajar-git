@@ -13,9 +13,21 @@
         'security/ir.model.access.csv',
         'views/produk.xml',
         'views/pesan.xml',
+        'views/siswa.xml',
+        'wizard/wiz_pilih_makanan.xml',
+        'wizard/wiz_report_sale_order.xml',
     ],
     'application': True,
     'depends': [
         'sale'
-    ]
-}
+    ],
+    'assets': {
+        'web.assets_common': [
+            ('include', 'web._assets_helpers'),
+            'okompyang/static/css/custom.css',
+        ],
+        'web.assets_backend': [
+            'okompyang/static/css/custom.css',
+        ]
+    }    
+}    

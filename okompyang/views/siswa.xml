@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="model_okompyang_siswa_view_form" model="ir.ui.view">
+            <field name="name">model_okompyang_siswa.view.form</field>
+            <field name="model">okompyang.siswa</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name"></field>
+                            <field name="jurusan"></field>
+                            <field name="tanggal"></field>
+                            <field name="produk_id"></field>
+                            <field name="notes"/>
+                        </group>
+
+                        <button name="do_pilih_makanan" type="object" string="Pilih Makanan Favorit" class="btn-primary" />
+                        <button name="do_ambil_tanggal" type="object" string="Ambil Tanggal" class="btn-primary" />
+
+                        
+
+
+                        <field name="produk_ids"></field>>
+                    </sheet>
+                </form>
+            </field>
+        </record>    
+    </data>
+</odoo>

@@ -43,6 +43,8 @@
                             string = Labelnya
                             class = bootstrap.css  -->
                             <button name="do_tambah" type="object" string="Buat Kategori Baru" class="btn btn-primary" />
+
+                            <button name="do_kategori_baru" type="object" string="Wizard Kategori Baru" class="btn btn-info"/>
                         </group>
 
                         <field name="siswa_ids"/>
@@ -50,10 +52,11 @@
                 </form>
             </field>
         </record>
-        
+<!--         
         <record id="okompyang_produk_tree" model="ir.ui.view">
             <field name="name">okompyang.produk.tree.view</field>
             <field name="model">okompyang.produk</field>
+            <field name="priority">15</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>                        
@@ -69,11 +72,37 @@
                                     
                 </tree>
             </field>
+        </record> -->
+
+        <record id="okompyang_produk_tree_wizard" model="ir.ui.view">
+            <field name="name">okompyang_produk_tree_wizard.view</field>
+            <field name="model">okompyang.produk</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false"  export_xlsx="false">
+                    <header>
+                        <button name="do_pilih_makanan" string="Pilih" type="object" class="btn-primary"/>
+                    </header>
+
+                    <field name="name"/>                        
+                    <field name="harga"/>                        
+                       
+                    <field name="state" 
+                        decoration-success="state == 'hijau'" 
+                        decoration-warning="state == 'kuning'" 
+                        decoration-danger="state == 'merah'" 
+                        widget="badge" 
+                        optional="show" 
+                        />
+                </tree>
+                <!-- <footer>
+                    <button name="do_selected_ids" type="object" string="Pilih" class="btn-default" />
+                </footer> -->
+            </field>
         </record>
-        
 
 
- <record id="view_produk_filter" model="ir.ui.view">
+     <record id="view_produk_filter" model="ir.ui.view">
         <field name="name">okompyang.produk.list.select</field>
         <field name="model">okompyang.produk</field>
         <!-- <field name="priority" eval="15"/> -->

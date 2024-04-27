@@ -19,6 +19,17 @@ class Produk(models.Model):
         ('hijau', 'Hijau'),
         ], default='hijau')
 
+    def do_kategori_baru(self):
+        action =  {
+            'name': 'Tulis Nama Kategori Yang Diinginkan',
+            'type': 'ir.actions.act_window',
+            'res_model': 'okompyang.wizard.kategori.baru',  # Ganti dengan nama model yang Anda inginkan
+            'view_mode': 'form',  # Mode tampilan untuk window baru
+            'target': 'new',  # Buka window baru di tab baru
+        }
+
+        return action
+
     def do_tambah(self):
         kategori = self.env['okompyang.kategori'].create({
             'name': 'INI-KODE-BARU',
@@ -42,3 +53,15 @@ class Produk(models.Model):
         #     'target': 'new',  # Buka window baru di tab baru
         #     'context': ctx,
         # }
+
+    def do_pilih_makanan(self):
+        ctx = self.env.context
+        ids = ctx.get('active_ids', [])
+        siswa_id = ctx.get('siswa_id')
+
+        if siswa_id:
+            siswa = self.env['okompyang.siswa'].browse(siswa_id)
+            
+            siswa.with_context(produk_ids=ids).do_pilih_makanan()
+
+        return True
