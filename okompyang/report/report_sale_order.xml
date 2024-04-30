@@ -46,11 +46,13 @@
 
         <record id="action_report_sale_order_preview" model="ir.actions.report">
             <field name="name">Sale Order (preview)</field>
-            <field name="model">osekai.sn.product</field>
+            <field name="model">sale.order</field>
             <field name="report_type">qweb-html</field>
+            <field name="report_name">okompyang.report_sale_order_layout</field>
+            <field name="report_file">okompyang.report_sale_order_layout</field>
             <!-- <field name="paperformat_id" ref="osekai.paperformat_a4_clear"/> -->
-            <field name="report_name">osekai.report_product_label_57x35_template</field>
-            <field name="report_file">osekai.report_product_label_57x35_template</field>
+            <!-- <field name="report_name">osekai.report_product_label_57x35_template</field> -->
+            <!-- <field name="report_file">osekai.report_product_label_57x35_template</field> -->
         </record>
                 
     </data>
