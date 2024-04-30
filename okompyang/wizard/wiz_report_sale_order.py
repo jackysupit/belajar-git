@@ -69,5 +69,9 @@ class WizReportSaleOrder(models.TransientModel):
 
         # ini mengambil action yang kita buat di file report_sale_order.xml
         action = self.env.ref("okompyang.action_report_sale_order").report_action([], data=param_data)
+        
+        
+        #discard_logo_check=True parameter ini untuk menghilangkan space ksong di atas yang biasanya digunakan untuk kop surat
+        action = self.env.ref("okompyang.action_report_sale_order").with_context(discard_logo_check=True).report_action([], data=param_data)
 
         return action
