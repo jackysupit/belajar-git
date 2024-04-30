@@ -16,6 +16,8 @@
         'views/siswa.xml',
         'wizard/wiz_pilih_makanan.xml',
         'wizard/wiz_report_sale_order.xml',
+
+        'report/report_sale_order.xml',
     ],
     'application': True,
     'depends': [

@@ -1,4 +1,6 @@
 from odoo import api, fields, models, _, tools
+from odoo.exceptions import UserError, ValidationError
+
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -23,24 +25,6 @@ class WizReportSaleOrder(models.TransientModel):
 
         return True
 
-    def do_print(self):
-
-        date_start = self.date_start
-        date_end = self.date_end
-
-        #so_ids = data_sale_order_yang_akan_diprint 
-        so_ids = self.env['sale.order'].search([('date_order', '>=', date_start), ('date_order','<=',date_end)])
-
-
-        #my user id = id user yang sedang login sekarang
-        #cari sale.order yang partner_id = user_id atau user_id = user_id
-        # user_id = self.env.user.id
-        # all_sale_order = self.env['sale.order'].search(['|',('partner_id', '=', user_id), ('user_id','=',user_id)])
-
-
-        return True
-
-
     def do_update_data(self):
         date_start = self.date_start
         date_end = self.date_end
@@ -55,3 +39,35 @@ class WizReportSaleOrder(models.TransientModel):
 
         siswa.with_context(date_start=date_start, date_end=date_end).proses_update_data()
 
+
+
+    def do_print(self):
+        date_start = self.date_start
+        date_end = self.date_end
+
+        fields = ['name','partner_id','amount_total','state',]
+        """
+            di odoo, kita bisa mengambil data dari model dengan cara: 
+
+            data_sale_order = self.env['sale.order'].search_read(...) # ini akan return array field yang kita pilih 
+            
+            data_sale_order = self.env['sale.order'].search(...) # ini akan return list of object record
+            
+            data_sale_order = self.env['sale.order'].search_count(...) # ini akan return integer hasil count(records)
+            
+            data_sale_order = self.env['sale.order'].browse([ids]) # mirip dengan search(), bedanya, akan error jika id tidak ditemukan. jadi harus pasti yakin id exists dulu 
+        """
+        data_sale_order = self.env['sale.order'].search_read(fields=fields, domain=[('date_order', '>=', date_start), ('date_order','<=',date_end)])
+        if not data_sale_order:
+            raise UserError(_('Tidak ada data sale pada range tanggal tersebut'))
+
+        param_data = {
+            'title': 'Print Sale Order Periode',
+            'periode': '{} - {}'.format(date_start, date_end),
+            'data_sale_order': data_sale_order,
+        }
+
+        # ini mengambil action yang kita buat di file report_sale_order.xml
+        action = self.env.ref("okompyang.action_report_sale_order").report_action([], data=param_data)
+
+        return action

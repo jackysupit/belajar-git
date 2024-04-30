@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <template id="okompyang.report_sale_order_layout">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <h2 t-esc="title" />
+                        <h5 t-esc="'Periode: ' + periode" />
+                        <table class="table table-sm o_main_table" name="table_sale_order">
+                            <thead>
+                                <tr style="background-color:#EEEEE0; font-style: bold">
+                                    <th>No</th>
+                                    <th>SO Number</th>
+                                    <th>Customer</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="urut" t-value="0" />
+                                <tr t-foreach="data_sale_order" t-as="sale" t-att-id="sale.get('id')">
+                                    <t t-set="urut" t-value="urut + 1" />
+
+                                    <td><t t-esc="urut"/></td>
+                                    <td><t t-esc="sale.get('name') + ' - ' + str(sale.get('id'))"/></td>
+                                    <td><t t-esc="sale.get('partner_id')[1]"/></td>
+                                    <td><t t-esc="sale.get('amount_total')"/></td>
+                                    <td><t t-esc="sale.get('state')"/></td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_sale_order" model="ir.actions.report">
+            <field name="name">Sale Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">okompyang.report_sale_order_layout</field>
+            <field name="report_file">okompyang.report_sale_order_layout</field>
+        </record>
+
+
+        <record id="action_report_sale_order_preview" model="ir.actions.report">
+            <field name="name">Sale Order (preview)</field>
+            <field name="model">osekai.sn.product</field>
+            <field name="report_type">qweb-html</field>
+            <!-- <field name="paperformat_id" ref="osekai.paperformat_a4_clear"/> -->
+            <field name="report_name">osekai.report_product_label_57x35_template</field>
+            <field name="report_file">osekai.report_product_label_57x35_template</field>
+        </record>
+                
+    </data>
+</odoo>

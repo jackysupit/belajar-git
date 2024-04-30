@@ -5,7 +5,7 @@ from odoo.http import content_disposition, request
 from odoo.tools import html_escape
 from odoo.http import content_disposition, Controller, request, route
 
-class SiswaController(Controller):
+class PesertaController(Controller):
     @route(['/siswa/registrasi'], type='http', auth="user", website=True)
     def do_registrasi_personal(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user

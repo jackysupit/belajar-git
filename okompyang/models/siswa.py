@@ -1,7 +1,7 @@
 from odoo import api, fields, models, _, tools
 
 
-class Siswa(models.Model):
+class Peserta(models.Model):
     _name = "okompyang.siswa"
     _description = "Ini adalah model untuk siswa"
 
