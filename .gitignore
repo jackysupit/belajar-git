@@ -41,4 +41,6 @@ package.json
 .pydevproject
 
 *.code-workspace
+**.code-workspace
 
+belajar_odoo16.code-workspace
