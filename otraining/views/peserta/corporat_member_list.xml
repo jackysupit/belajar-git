@@ -28,9 +28,10 @@
                                         <td><t t-esc="['Andi Suryana', 'Budi Santoso', 'Citra Dewi', 'Dewi Lestari', 'Eka Putri'][index % 5]"/></td>
                                         <td><t t-esc="['+621394923223', '+628123456789', '+627895432100', '+628987654321', '+621234567890'][index % 5]"/></td>
                                         <td>
+                                            <!-- <button class="btn btn-sm btn-success">Set As PIC</button> -->
                                             <button class="btn btn-sm btn-info">Edit</button>
                                             <button class="btn btn-sm btn-danger">Hapus</button>
-                                            <a href="/siswa/corporat/pic" class="btn btn-sm btn-warning">Jadikan PIC</a>
+                                            <a href="/peserta/corporat/pic" class="btn btn-sm btn-warning">Jadikan PIC</a>
                                         </td>
                                     </tr>
                                 </t>

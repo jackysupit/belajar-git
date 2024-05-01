@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="page_registrasi_corporat">
+    <template id="page_registrasi_personal">
         <t t-call="website.layout">
             <style>
                 .profile-label {
-                    min-width: 150px;
-                    display: inline-block;
+                min-width: 150px;
+                display: inline-block;
                 }
 
                 .foto-profile {
@@ -48,11 +48,11 @@
                                         <div class="row">
                                             <div class="">
                                                 <label>
-                                                    <input type="radio" name="tipe_pendaftaran" value="1" />
+                                                    <input type="radio" name="tipe_pendaftaran" value="1" checked="1" />
                                                     Pribadi
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="tipe_pendaftaran" value="2" checked="1"/>
+                                                    <input type="radio" name="tipe_pendaftaran" value="2"/>
                                                     Perusahaan
                                                 </label>
                                             </div>
@@ -62,56 +62,27 @@
                             </div>
 
                             <!-- Profile Information -->
-                            <div>
-                                <div class="mb-3 me-3">
-                                    <div class="d-flex align-items-center">
-                                        <div class="profile-label">Nama</div>
-                                        <div class="profile-info flex-grow-1">
-                                            <input type="text" class="form-control" name="name" value="Luna Maya"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 me-3">
-                                    <div class="d-flex align-items-center">
-                                        <div class="profile-label">Email</div>
-                                        <div class="profile-info flex-grow-1">
-                                            <input type="text" class="form-control" name="name" value="lunamaya@gmail.com"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 me-3">
-                                    <div class="d-flex align-items-center">
-                                        <div class="profile-label">Phone</div>
-                                        <div class="profile-info flex-grow-1">
-                                            <input type="text" class="form-control" name="name" value="0812.5000.1234"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 me-3">
-                                    <div class="d-flex align-items-center">
-                                        <div class="profile-label">Alamat</div>
-                                        <div class="profile-info flex-grow-1">
-                                            <textarea class="form-control" name="name">Jalan Denpasar Selatan No. 55, Kuta, Bali</textarea>
-                                        </div>
+                            <div class="mb-3 me-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-label">Nama</div>
+                                    <div class="profile-info flex-grow-1">
+                                        <input type="text" class="form-control" name="name" value="Luna Maya"/>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- CORPORAT start -->
                             <div class="mb-3 me-3">
                                 <div class="d-flex align-items-center">
-                                    <div class="profile-label"></div>
+                                    <div class="profile-label">Email</div>
                                     <div class="profile-info flex-grow-1">
-                                        <hr/>
+                                        <input type="text" class="form-control" name="name" value="lunamaya@gmail.com"/>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mb-3 me-3">
                                 <div class="d-flex align-items-center">
-                                    <div class="profile-label">Nama Perusahaan</div>
+                                    <div class="profile-label">Phone</div>
                                     <div class="profile-info flex-grow-1">
-                                        <input type="text" class="form-control" name="name" value="PT. Sinar Rahayu Abadi"/>
+                                        <input type="text" class="form-control" name="name" value="0812.5000.1234"/>
                                     </div>
                                 </div>
                             </div>
@@ -123,10 +94,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- CORPORAT ends -->
-                            
                             <div class="mb-3 me-3">
-                                <a href="/siswa/profile/edit" class="btn btn-primary">Daftar</a>
+                                <a href="/peserta/profile/edit" class="btn btn-primary">Daftar</a>
                             </div>
 
                         </div>

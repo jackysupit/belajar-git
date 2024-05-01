@@ -6,103 +6,110 @@ from odoo.tools import html_escape
 from odoo.http import content_disposition, Controller, request, route
 
 class PesertaController(Controller):
-    @route(['/siswa/registrasi'], type='http', auth="user", website=True)
+    @route(['/peserta/registrasi'], type='http', auth="user", website=True)
     def do_registrasi_personal(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_registrasi_personal', {'partner': partner})
 
-    @route(['/siswa/registrasi/corporat'], type='http', auth="user", website=True)
+    @route(['/peserta/registrasi/corporat'], type='http', auth="user", website=True)
     def do_registrasi_corporat(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_registrasi_corporat', {'partner': partner})
 
 
-    @route(['/siswa/registrasi/done'], type='http', auth="user", website=True)
+    @route(['/peserta/registrasi/done'], type='http', auth="user", website=True)
     def do_registrasi_done(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_registrasi_done', {'partner': partner})
 
-    @route(['/siswa/edit'], type='http', auth="user", website=True)
+    @route(['/peserta/edit'], type='http', auth="user", website=True)
     def do_training_edit(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_profile', {'partner': partner})
 
-    @route(['/siswa/login'], type='http', auth="user", website=True)
-    def do_siswa_login(self):
+    @route(['/peserta/login'], type='http', auth="user", website=True)
+    def do_peserta_login(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_login', {'partner': partner})
+        return http.request.render('otraining.page_peserta_login', {'partner': partner})
 
-    @route(['/siswa/logout'], type='http', auth="user", website=True)
-    def do_siswa_logout(self):
+    @route(['/peserta/logout'], type='http', auth="user", website=True)
+    def do_peserta_logout(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_logout', {'partner': partner})
+        return http.request.render('otraining.page_peserta_logout', {'partner': partner})
 
-    @route(['/siswa/password/reset'], type='http', auth="user", website=True)
-    def do_siswa_password_reset(self):
+    @route(['/peserta/password/reset'], type='http', auth="user", website=True)
+    def do_peserta_password_reset(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_password_reset', {'partner': partner})
+        return http.request.render('otraining.page_peserta_password_reset', {'partner': partner})
 
-    @route(['/siswa/password/otp'], type='http', auth="user", website=True)
-    def do_siswa_password_otp(self):
+    @route(['/peserta/password/otp'], type='http', auth="user", website=True)
+    def do_peserta_password_otp(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_password_otp', {'partner': partner})
+        return http.request.render('otraining.page_peserta_password_otp', {'partner': partner})
 
-    @route(['/siswa/password/new'], type='http', auth="user", website=True)
-    def do_siswa_password_new(self):
+    @route(['/peserta/password/new'], type='http', auth="user", website=True)
+    def do_peserta_password_new(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_password_new', {'partner': partner})
+        return http.request.render('otraining.page_peserta_password_new', {'partner': partner})
 
-    @route(['/siswa/training'], type='http', auth="user", website=True)
+    @route(['/peserta/training'], type='http', auth="user", website=True)
     def do_training(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_training', {'partner': partner})
 
-    @route(['/siswa/training/detail'], type='http', auth="user", website=True)
+    @route(['/peserta/training/detail'], type='http', auth="user", website=True)
     def do_training_detail(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_training_detail', {'partner': partner})
 
-    @route(['/siswa/corporat/member/list'], type='http', auth="user", website=True)
+    @route(['/peserta/corporat/member/list'], type='http', auth="user", website=True)
     def do_corporat_member_list(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_corporat_member_list', {'partner': partner})
 
-    @route(['/siswa/corporat/member/add'], type='http', auth="user", website=True)
+    @route(['/peserta/corporat/member/add'], type='http', auth="user", website=True)
     def do_corporat_member_add(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_corporat_member_add', {'partner': partner})
 
-    @route(['/siswa/training/daftar/personal'], type='http', auth="user", website=True)
+
+    @route(['/peserta/corporat/member/delete'], type='http', auth="user", website=True)
+    def do_corporat_member_delete(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_corporat_member_delete', {'partner': partner})
+
+    @route(['/peserta/training/daftar/personal'], type='http', auth="user", website=True)
     def do_training_data_personal(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_training_daftar_personal', {'partner': partner})
 
-    @route(['/siswa/training/daftar/corporat'], type='http', auth="user", website=True)
+    @route(['/peserta/training/daftar/corporat'], type='http', auth="user", website=True)
     def do_training_data_corporat(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_training_daftar_corporat', {'partner': partner})
 
-    @route(['/siswa/corporat/pic'], type='http', auth="user", website=True)
+    @route(['/peserta/corporat/pic'], type='http', auth="user", website=True)
     def do_corporat_pic(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_corporat_pic', {'partner': partner})
 
-    @route(['/siswa/kelas'], type='http', auth="user", website=True)
-    def do_siswa_kelas(self):
+    @route(['/peserta/kelas'], type='http', auth="user", website=True)
+    def do_peserta_kelas(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_kelas', {'partner': partner})
+        return http.request.render('otraining.page_peserta_kelas', {'partner': partner})
 
-    @route(['/siswa/dashboard'], type='http', auth="user", website=True)
-    def do_siswa_dashboard(self):
-        partner = request.env.user.partner_id  # Get the partner associated with the current user
-        return http.request.render('otraining.page_siswa_dashboard', {'partner': partner})
-
-    @route(['/siswa/pembayaran/konfirmasi'], type='http', auth="user", website=True)
-    def do_siswa_pembayaran_konfirmasi(self):
+    @route(['/peserta/pembayaran/konfirmasi'], type='http', auth="user", website=True)
+    def do_peserta_pembayaran_konfirmasi(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_pembayaran_konfirmasi', {'partner': partner})
 
-    @route(['/siswa/pembayaran/done'], type='http', auth="user", website=True)
-    def do_siswa_pembayaran_done(self):
+    @route(['/peserta/pembayaran/done'], type='http', auth="user", website=True)
+    def do_peserta_pembayaran_done(self):
         partner = request.env.user.partner_id  # Get the partner associated with the current user
         return http.request.render('otraining.page_pembayaran_done', {'partner': partner})
+
+
+    @route(['/peserta/dashboard'], type='http', auth="user", website=True)
+    def do_peserta_dashboard(self):
+        partner = request.env.user.partner_id  # Get the partner associated with the current user
+        return http.request.render('otraining.page_peserta_dashboard', {'partner': partner})

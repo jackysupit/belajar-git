@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="page_registrasi_done">
+    <template id="page_peserta_logout">
         <t t-call="website.layout">
             <style>
                 /* Optional custom styles */
@@ -12,10 +12,10 @@
                 }
             </style>
             <div class="container logout-container mb-5">
-                <h2>Berhasil</h2>
-                <p>Registrasi Anda sudah berhasil.<br/>
-                    Silahkan klik dibawah ini  untuk mendaftar training</p>
-                <a href="/siswa/login" class="btn btn-primary">Login</a>
+                <h2>Anda sudah logout.</h2>
+                <p>Terima kasih telah menggunakan applikasi ini.<br/>
+                    Klik dibawah untuk login kembali.</p>
+                <a href="/peserta/login" class="btn btn-primary">Login</a>
             </div>
         </t>
     </template>

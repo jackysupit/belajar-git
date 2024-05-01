@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="page_siswa_kelas" name="Kelas Yang Anda Ikuti">
+    <template id="page_peserta_kelas" name="Kelas Yang Anda Ikuti">
         <t t-call="website.layout">
             <div class="">
                 <div class="oe_structure">

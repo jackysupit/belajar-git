@@ -110,7 +110,7 @@
 
 
                     <div class="mb-3 me-3">
-                        <a href="/siswa/profile/edit" class="btn btn-primary">Save</a>
+                        <a href="/peserta/profile/edit" class="btn btn-primary">Save</a>
                     </div>
 
                     

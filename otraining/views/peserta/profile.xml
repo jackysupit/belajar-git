@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="mb-3">
-            <a href="/siswa/profile/edit" class="btn btn-primary">Edit</a>
+            <a href="/peserta/profile/edit" class="btn btn-primary">Edit</a>
         </div>
         
         </div>

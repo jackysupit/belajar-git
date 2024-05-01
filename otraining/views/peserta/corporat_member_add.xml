@@ -61,7 +61,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="profile-label"></div>
                                     <div class="profile-info flex-grow-1">
-                                        <a href="/siswa/profile/edit" class="btn btn-primary">Tambah</a>
+                                        <a href="/peserta/profile/edit" class="btn btn-primary">Tambah</a>
                                     </div>
                                 </div>
                             </div>

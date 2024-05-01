@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="page_siswa_dashboard" name="Dashboard">
+    <template id="page_peserta_dashboard" name="Dashboard">
         <t t-call="website.layout">
             <style>
                 .wrapper-detail img {
@@ -18,15 +18,7 @@
                     <!-- max-height: 316px; -->
                     <!-- max-width: 316px; -->
                 }
-<!--                 
-
-1. Revenue: Tren penjualan, perbandingan dengan target, dan kinerja penjualan per wilayah atau per produk.
-2. ⁠profit: Margin keuntungan, laba bersih, dan arus kas.
-3. ⁠Pelanggan: Jumlah pelanggan baru, tingkat retensi pelanggan, dan nilai umur
-4. ⁠Operasi: Efisiensi operasional, waktu tunggu
-
--->
-
+                
             </style>
             <div class="">
                 <div class="oe_structure">

@@ -1,2 +1,2 @@
 from . import profile
-from . import siswa
+from . import peserta

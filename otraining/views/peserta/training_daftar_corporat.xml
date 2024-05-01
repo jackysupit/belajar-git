@@ -59,11 +59,11 @@
                                                     <div class="row">
                                                         <div class="">
                                                             <label>
-                                                                <input type="radio" name="tipe_pendaftaran" value="1" checked="1" />
+                                                                <input type="radio" name="tipe_pendaftaran" value="1" />
                                                                 Pribadi
                                                             </label>
                                                             <label>
-                                                                <input type="radio" name="tipe_pendaftaran" value="2"/>
+                                                                <input type="radio" name="tipe_pendaftaran" value="2" checked="1" />
                                                                 Perusahaan
                                                             </label>
                                                         </div>
@@ -132,7 +132,7 @@
                                                             <div class="d-flex align-items-center">
                                                                 <div class="profile-label"></div>
                                                                 <div class="profile-info flex-grow-1">
-                                                                    <a href="/siswa/profile/edit" class="btn btn-primary">Tambah</a>
+                                                                    <a href="/peserta/profile/edit" class="btn btn-primary">Tambah</a>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -9,7 +9,7 @@ export class ChartRenderer extends Component {
         this.chartRef = useRef("chart")
         onWillStart(async ()=>{
             await loadJS("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js");
-            // await loadJS('http://localhost:4010/odoo_custom_dashboard/static/lib/apexcharts-bundle/dist/apexcharts.min.js');
+            // await loadJS('http://localhost:4010/otraining/static/lib/apexcharts-bundle/dist/apexcharts.min.js');
         })
 
         onMounted(()=>this.renderChart())
