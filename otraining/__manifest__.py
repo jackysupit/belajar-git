@@ -35,5 +35,12 @@
     'application': True,
     'depends': [
         'web'
-    ]
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'otraining/static/src/components/**/*.js',
+            'otraining/static/src/components/**/*.xml',
+            'otraining/static/src/components/**/*.scss',
+        ],
+    },
 }
