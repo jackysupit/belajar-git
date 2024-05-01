@@ -31,6 +31,7 @@
         'views/siswa/dashboard.xml',
         'views/siswa/pembayaran_konfirmasi.xml',
         'views/siswa/pembayaran_done.xml',
+        'views/bki_dashboard.xml',
     ],
     'application': True,
     'depends': [
