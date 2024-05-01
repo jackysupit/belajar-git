@@ -40,5 +40,5 @@ package.json
 .project
 .pydevproject
 
-.code-workspace
+*.code-workspace
 
