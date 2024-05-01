@@ -8,6 +8,7 @@
     'maintainer': 'Goesde Rai',
     'website':  'natha.com',
     'license': 'AGPL-3',
+    'icon': '/otoko/static/img/icon.png',
     'data': [
         'security/ir.model.access.csv',
         'data/otoko_sequences.xml',

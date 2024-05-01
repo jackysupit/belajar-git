@@ -40,38 +40,64 @@ class WizReportSaleOrder(models.TransientModel):
         siswa.with_context(date_start=date_start, date_end=date_end).proses_update_data()
 
 
-
-    def do_print(self):
+    def _get_report_data(self):
         date_start = self.date_start
         date_end = self.date_end
-
         fields = ['name','partner_id','amount_total','state',]
-        """
-            di odoo, kita bisa mengambil data dari model dengan cara: 
-
-            data_sale_order = self.env['sale.order'].search_read(...) # ini akan return array field yang kita pilih 
-            
-            data_sale_order = self.env['sale.order'].search(...) # ini akan return list of object record
-            
-            data_sale_order = self.env['sale.order'].search_count(...) # ini akan return integer hasil count(records)
-            
-            data_sale_order = self.env['sale.order'].browse([ids]) # mirip dengan search(), bedanya, akan error jika id tidak ditemukan. jadi harus pasti yakin id exists dulu 
-        """
+        
         data_sale_order = self.env['sale.order'].search_read(fields=fields, domain=[('date_order', '>=', date_start), ('date_order','<=',date_end)])
         if not data_sale_order:
             raise UserError(_('Tidak ada data sale pada range tanggal tersebut'))
 
         param_data = {
-            'title': 'Print Sale Order Periode',
-            'periode': '{} - {}'.format(date_start, date_end),
+            'title': 'Sale Order by Periode',
+            'periode': '{} to {}'.format(date_start, date_end),
             'data_sale_order': data_sale_order,
         }
+        
+        return param_data
+
+
+    def do_print(self):
+        # date_start = self.date_start
+        # date_end = self.date_end
+
+        # fields = ['name','partner_id','amount_total','state',]
+        # """
+        #     di odoo, kita bisa mengambil data dari model dengan cara: 
+
+        #     data_sale_order = self.env['sale.order'].search_read(...) # ini akan return array field yang kita pilih 
+            
+        #     data_sale_order = self.env['sale.order'].search(...) # ini akan return list of object record
+            
+        #     data_sale_order = self.env['sale.order'].search_count(...) # ini akan return integer hasil count(records)
+            
+        #     data_sale_order = self.env['sale.order'].browse([ids]) # mirip dengan search(), bedanya, akan error jika id tidak ditemukan. jadi harus pasti yakin id exists dulu 
+        # """
+        # data_sale_order = self.env['sale.order'].search_read(fields=fields, domain=[('date_order', '>=', date_start), ('date_order','<=',date_end)])
+        # if not data_sale_order:
+        #     raise UserError(_('Tidak ada data sale pada range tanggal tersebut'))
+
+        # param_data = {
+        #     'title': 'Print Sale Order Periode',
+        #     'periode': '{} - {}'.format(date_start, date_end),
+        #     'data_sale_order': data_sale_order,
+        # }
+        
+        param_data = self._get_report_data()
 
         # ini mengambil action yang kita buat di file report_sale_order.xml
-        action = self.env.ref("okompyang.action_report_sale_order").report_action([], data=param_data)
-        
+        # action = self.env.ref("okompyang.action_report_sale_order").report_action([], data=param_data)
         
         #discard_logo_check=True parameter ini untuk menghilangkan space ksong di atas yang biasanya digunakan untuk kop surat
         action = self.env.ref("okompyang.action_report_sale_order").with_context(discard_logo_check=True).report_action([], data=param_data)
 
+        return action
+    
+    def do_preview(self):
+        param_data = self._get_report_data()
+
+        # ini mengambil action yang kita buat di file report_sale_order.xml
+        action = self.env.ref("okompyang.action_report_sale_order_preview").report_action([], data=param_data)
+        
         return action

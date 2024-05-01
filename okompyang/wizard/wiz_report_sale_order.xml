@@ -18,7 +18,8 @@
                         </group>
                     </sheet>
                     <footer>
-                        <button name="do_print" type="object" string="Print" class="btn-primary" />
+                        <button name="do_print" type="object" string="Print" class="btn btn-primary" />
+                        <button name="do_preview" type="object" string="Preview" class="btn btn-warning" />
                     </footer>
                 </form>
             </field>
