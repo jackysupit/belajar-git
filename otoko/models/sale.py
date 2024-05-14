@@ -45,7 +45,7 @@ class SaleDetail(models.Model):
     field compute & related
     - readonly
     - tidak tersimpan di database
-    - jika field tidak tersimpan di database, tidak bsia digunakan untuk search & groups
+    - jika field tidak tersimpan di database, tidak bisa digunakan untuk search & groups
     """
     
     @api.depends('qty', 'item_price')

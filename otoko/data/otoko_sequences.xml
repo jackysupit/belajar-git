@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data noupdate="1">
-        <record id="otoko_sale_sequence" model="ir.sequence">
-          <field name="name">Otoko Sale Sequence</field>
-          <field name="code">otoko_sale_sequence</field>
-          <field name="prefix">S-</field>
-          <field name="padding">5</field>
-          <field name="number_next">1</field>
-        </record>
-      </data>
+  <data noupdate="1">
+    <record id="otoko_sale_sequence" model="ir.sequence">
+      <field name="name">Otoko Sale Sequence</field>
+      <field name="code">otoko_sale_sequence</field>
+      <field name="prefix">S-</field>
+      <field name="padding">5</field>
+      <field name="number_next">1</field>
+    </record>
+  </data>
 </odoo>
