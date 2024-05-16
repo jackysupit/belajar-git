@@ -6,5 +6,8 @@ sudo apt-get install libxml2-dev libxslt-dev
 
 pip install -r requirements.txt
 
+pip install --upgrade psycopg2
+
+
 
 #ends
